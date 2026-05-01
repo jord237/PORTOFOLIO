@@ -1,0 +1,199 @@
+/* ============================================================
+   ANIMATIONS.CSS — Keyframes & transitions
+   ============================================================ */
+
+/* ── Reveal animations ─────────────────────────────────────── */
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.7s cubic-bezier(0.25,1,0.5,1),
+              transform 0.7s cubic-bezier(0.25,1,0.5,1);
+}
+
+.reveal.revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Staggered delays */
+.reveal[data-delay="1"] { transition-delay: 0.08s; }
+.reveal[data-delay="2"] { transition-delay: 0.16s; }
+.reveal[data-delay="3"] { transition-delay: 0.24s; }
+.reveal[data-delay="4"] { transition-delay: 0.32s; }
+.reveal[data-delay="5"] { transition-delay: 0.40s; }
+.reveal[data-delay="6"] { transition-delay: 0.48s; }
+
+/* Slide from left */
+.reveal-left {
+  opacity: 0;
+  transform: translateX(-30px);
+  transition: opacity 0.7s cubic-bezier(0.25,1,0.5,1),
+              transform 0.7s cubic-bezier(0.25,1,0.5,1);
+}
+
+.reveal-left.revealed {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Slide from right */
+.reveal-right {
+  opacity: 0;
+  transform: translateX(30px);
+  transition: opacity 0.7s cubic-bezier(0.25,1,0.5,1),
+              transform 0.7s cubic-bezier(0.25,1,0.5,1);
+}
+
+.reveal-right.revealed {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Fade only */
+.reveal-fade {
+  opacity: 0;
+  transition: opacity 0.9s ease;
+}
+
+.reveal-fade.revealed {
+  opacity: 1;
+}
+
+/* Scale up */
+.reveal-scale {
+  opacity: 0;
+  transform: scale(0.92);
+  transition: opacity 0.6s cubic-bezier(0.25,1,0.5,1),
+              transform 0.6s cubic-bezier(0.25,1,0.5,1);
+}
+
+.reveal-scale.revealed {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* ── Hero entrance ─────────────────────────────────────────── */
+@keyframes hero-fade-up {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.hero-status   { animation: hero-fade-up 0.6s ease 0.1s both; }
+.hero-name     { animation: hero-fade-up 0.7s ease 0.2s both; }
+.hero-typewriter-wrap { animation: hero-fade-up 0.7s ease 0.35s both; }
+.hero-pitch    { animation: hero-fade-up 0.7s ease 0.45s both; }
+.hero-actions  { animation: hero-fade-up 0.7s ease 0.55s both; }
+.hero-socials  { animation: hero-fade-up 0.7s ease 0.65s both; }
+.hero-visual   { animation: hero-fade-up 0.8s ease 0.25s both; }
+
+/* Floating badges */
+@keyframes float-badge {
+  0%, 100% { transform: translateY(0) rotate(-2deg); }
+  50%       { transform: translateY(-8px) rotate(-2deg); }
+}
+
+@keyframes float-badge-2 {
+  0%, 100% { transform: translateY(0) rotate(2deg); }
+  50%       { transform: translateY(-6px) rotate(2deg); }
+}
+
+.badge-tl { animation: float-badge 4s ease-in-out infinite 0.5s; }
+.badge-br { animation: float-badge-2 5s ease-in-out infinite; }
+
+/* ── Glitch effect ─────────────────────────────────────────── */
+@keyframes glitch {
+  0%   { clip-path: polygon(0 0, 100% 0, 100% 33%, 0 33%); transform: translate(-4px); }
+  25%  { clip-path: polygon(0 50%, 100% 50%, 100% 75%, 0 75%); transform: translate(4px); }
+  50%  { clip-path: polygon(0 25%, 100% 25%, 100% 50%, 0 50%); transform: translate(-2px); }
+  75%  { clip-path: polygon(0 66%, 100% 66%, 100% 90%, 0 90%); transform: translate(2px); }
+  100% { clip-path: none; transform: translate(0); }
+}
+
+.glitch-hover:hover::before,
+.glitch-hover:hover::after {
+  content: attr(data-text);
+  position: absolute;
+  inset: 0;
+  animation: glitch 0.4s steps(2) both;
+}
+
+.glitch-hover:hover::before {
+  color: var(--accent);
+  opacity: 0.6;
+  animation-delay: 0s;
+}
+
+.glitch-hover:hover::after {
+  color: var(--blue);
+  opacity: 0.6;
+  animation-delay: 0.05s;
+}
+
+/* ── Skill bar entrance ────────────────────────────────────── */
+@keyframes bar-grow {
+  from { transform: scaleX(0); }
+  to   { transform: scaleX(1); }
+}
+
+/* ── Noise/grain texture overlay ───────────────────────────── */
+@keyframes grain {
+  0%   { transform: translate(0, 0); }
+  20%  { transform: translate(-2px, 2px); }
+  40%  { transform: translate(2px, -2px); }
+  60%  { transform: translate(-1px, 1px); }
+  80%  { transform: translate(1px, -1px); }
+  100% { transform: translate(0, 0); }
+}
+
+/* ── Pulse ring ────────────────────────────────────────────── */
+@keyframes pulse-ring {
+  0%   { box-shadow: 0 0 0 0 rgba(0,212,170,0.4); }
+  70%  { box-shadow: 0 0 0 14px rgba(0,212,170,0); }
+  100% { box-shadow: 0 0 0 0 rgba(0,212,170,0); }
+}
+
+.pulse { animation: pulse-ring 2s cubic-bezier(0.4,0,0.6,1) infinite; }
+
+/* ── Hover underline sweep ─────────────────────────────────── */
+.underline-sweep {
+  position: relative;
+  display: inline;
+}
+
+.underline-sweep::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: var(--accent);
+  transition: width 0.3s ease;
+}
+
+.underline-sweep:hover::after { width: 100%; }
+
+/* ── Counter animation ─────────────────────────────────────── */
+.counter-wrap {
+  font-variant-numeric: tabular-nums;
+}
+
+/* ── Terminal text ─────────────────────────────────────────── */
+@keyframes term-appear {
+  from { opacity: 0; transform: translateX(-8px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+.term-line {
+  animation: term-appear 0.3s ease both;
+}
+
+/* ── Section separator pulse ───────────────────────────────── */
+@keyframes sep-glow {
+  0%, 100% { opacity: 0.3; }
+  50%       { opacity: 0.7; }
+}
+
+.sep-glow {
+  animation: sep-glow 3s ease-in-out infinite;
+}
