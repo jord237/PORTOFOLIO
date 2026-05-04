@@ -75,7 +75,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  /* ── Back to top ───────────────────────────────────────── */
+  /* ── Back to top ─────────────────────────────────────*/
   const backTop = document.getElementById('back-top');
 
   if (backTop) {
