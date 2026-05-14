@@ -39,24 +39,26 @@ document.addEventListener('DOMContentLoaded', () => {
 
   /* ── Mobile burger menu ────────────────────────────────── */
   const burger = document.querySelector('.nav-burger');
-  const body = document.body;
 
   if (burger) {
     burger.addEventListener('click', () => {
-      navbar.classList.toggle('nav-mobile-open');
+      const isOpen = navbar.classList.toggle('nav-mobile-open');
+      burger.setAttribute('aria-expanded', String(isOpen));
     });
 
     // Close on nav link click
     navLinks.forEach(link => {
       link.addEventListener('click', () => {
         navbar.classList.remove('nav-mobile-open');
+        burger.setAttribute('aria-expanded', 'false');
       });
     });
 
     // Close on outside click
     document.addEventListener('click', (e) => {
-      if (!navbar.contains(e.target)) {
+      if (navbar.classList.contains('nav-mobile-open') && !navbar.contains(e.target) && !burger.contains(e.target)) {
         navbar.classList.remove('nav-mobile-open');
+        burger.setAttribute('aria-expanded', 'false');
       }
     });
   }

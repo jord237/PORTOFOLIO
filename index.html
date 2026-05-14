@@ -55,7 +55,7 @@
       BJ<span>.</span>dev
     </a>
 
-    <ul class="nav-links" role="list">
+    <ul id="nav-links" class="nav-links" role="list">
       <li><a href="#about">À propos</a></li>
       <li><a href="#experiences">Expériences</a></li>
       <li><a href="#projects">Projets</a></li>
@@ -65,7 +65,7 @@
 
     <a href="#contact" class="nav-cta">Contact</a>
 
-    <button class="nav-burger" aria-label="Menu mobile" aria-expanded="false">
+    <button type="button" class="nav-burger" aria-label="Menu mobile" aria-expanded="false" aria-controls="nav-links">
       <span></span>
       <span></span>
       <span></span>
@@ -73,6 +73,7 @@
 
   </div>
 </nav>
+<main>
 
 <!-- ══════════════════════════════════════════════════════════
      HERO
@@ -117,6 +118,10 @@
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
             Voir mes projets
           </a>
+          <a href="assets/CV KAMTOalt.pdf" class="btn btn-ghost" download>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14"/><path d="M5 12l7 7 7-7"/></svg>
+            Télécharger mon CV
+          </a>
           <a href="#contact" class="btn btn-ghost">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
             Me contacter
@@ -125,7 +130,7 @@
 
         <div class="hero-socials" aria-label="Réseaux sociaux">
           <span class="hero-social-label" aria-hidden="true">Retrouvez-moi</span>
-          <a href="www.linkedin.com/in/bryan-kamto0306a23a2" target="_blank" rel="noopener noreferrer" class="hero-social-link" aria-label="LinkedIn">
+          <a href="https://www.linkedin.com/in/bryan-kamto0306a23a2" target="_blank" rel="noopener noreferrer" class="hero-social-link" aria-label="LinkedIn">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
           </a>
           <a href="https://github.com/jord237" target="_blank" rel="noopener noreferrer" class="hero-social-link" aria-label="GitHub">
@@ -414,9 +419,9 @@
               <span class="tag">NLP</span>
               <span class="tag tag-blue">Sécurité</span>
             </div>
-            <a href="https://cdn.botpress.cloud/webchat/v3.6/shareable.html?configUrl=https://files.bpcontent.cloud/2025/05/16/11/20250516115328-852BQEWK.json" class="project-link" aria-label="Voir le projet BOTIUC sur GitHub">
+            <a href="https://cdn.botpress.cloud/webchat/v3.6/shareable.html?configUrl=https://files.bpcontent.cloud/2025/05/16/11/20250516115328-852BQEWK.json" target="_blank" rel="noopener noreferrer" class="project-link" aria-label="Voir la démo BOTIUC">
               <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-              GitHub
+              Voir la démo
             </a>
           </div>
         </div>
@@ -441,9 +446,9 @@
               <span class="tag tag-accent">ML</span>
               <span class="tag">Heuristique</span>
             </div>
-            <a href="#" class="project-link" aria-label="Voir Bryan Security sur GitHub">
+            <a href="#contact" class="project-link" aria-label="Me contacter pour Bryan Security">
               <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-              GitHub
+              Me contacter
             </a>
           </div>
         </div>
@@ -468,9 +473,9 @@
               <span class="tag">MySQL</span>
               <span class="tag tag-blue">JS</span>
             </div>
-            <a href="#" class="project-link" aria-label="Voir le projet Immobilier sur GitHub">
+            <a href="#contact" class="project-link" aria-label="Me contacter pour le projet Gestion Immobilière">
               <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-              GitHub
+              Me contacter
             </a>
           </div>
         </div>
@@ -927,6 +932,8 @@
 
   </div>
 </section>
+
+</main>
 
 <!-- ══════════════════════════════════════════════════════════
      FOOTER
