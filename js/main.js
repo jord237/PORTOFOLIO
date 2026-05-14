@@ -94,9 +94,17 @@ document.addEventListener('DOMContentLoaded', () => {
     const phrases = [
       'Cybersécurité',
       'Sécurité Réseaux',
+      'Data Science',
       'Analyse de menaces',
       'Data & Python',
       'Security by Design',
+      'Ethical Hacking',
+      'Pentesting',
+      'Cloud Security',
+      'Forensics',
+      'SIEM & SOC',
+      'Cryptographie',
+    
     ];
 
     let phraseIndex = 0;
